@@ -1,7 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
-//  Copyright (c) 2018, The Fredenergy Developers
+//  Copyright (c) 2018, The FredEnergy Developers
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -58,7 +58,7 @@ const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(56560000
 --print-genesis-tx --genesis-block-reward-address <premine wallet address>
 
 For example:
-TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
+FredEnergyd --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
 
 * Take the hash printed, and replace it with the hash below in GENESIS_COINBASE_TX_HEX
 
