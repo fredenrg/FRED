@@ -67,7 +67,7 @@ FredEnergyd --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BP
 * You should see your premine appear in the previously generated wallet.
 
 */
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010e01ff00018080d8e7c0c6daec07025f14deb978f76b5f7f67704b37981a2c13832d57d090217a504e4eded59de438210154fc006231ba633ce0a65d86e95b7ca2e52489e1d05dc2f643989a7716597612";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010e01ff00018080d8e7c0c6daec0702d5e15087d88bc877fb81217c3814bbb34a74df2b9071be88cb52dfa2385591712101f80b058ed187ba010bd68e272c14bb550f881e7813b3181fe63869432c35159c";
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
@@ -164,7 +164,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "FredCoins";
+const char     CRYPTONOTE_NAME[]                             = "FredEnergy";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
