@@ -1,5 +1,5 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// Copyright (c) 2018, The Fredenergy Developers
+// Copyright (c) 2018, The FredEnergy Developers
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -23,7 +23,7 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "FredCoind";
+    const std::string daemonName = "FredEnergyd";
 
     /* The name to call this wallet */
     const std::string walletName = "zedwallet";
@@ -36,7 +36,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "http://fredcoins.org";
+    const std::string contactLink = "http://fredenergy.org";
 
 
     /* The number of decimals your coin has */
