@@ -78,10 +78,10 @@ const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9;
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
 
-const uint64_t MINIMUM_MIXIN_V1                              = 1;
-const uint64_t MAXIMUM_MIXIN_V1                              = 6;
-const uint64_t MINIMUM_MIXIN_V2                              = 1;
-const uint64_t MAXIMUM_MIXIN_V2                              = 7;
+const uint64_t MINIMUM_MIXIN_V1                              = 0;
+const uint64_t MAXIMUM_MIXIN_V1                              = 8;
+const uint64_t MINIMUM_MIXIN_V2                              = 2;
+const uint64_t MAXIMUM_MIXIN_V2                              = 8;
 
 const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 0;
 const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 1;
