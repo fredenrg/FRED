@@ -67,7 +67,7 @@ FredEnergyd --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BP
 * You should see your premine appear in the previously generated wallet.
 
 */
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010e01ff00018080d8e7c0c6daec0702d5e15087d88bc877fb81217c3814bbb34a74df2b9071be88cb52dfa2385591712101f80b058ed187ba010bd68e272c14bb550f881e7813b3181fe63869432c35159c";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010e01ff00018080d8e7c0c6daec07020b20745e1e71007544a639c1c638a838ada205ed29473f1eec69dde7fb647c882101dfe6abaa6a22569e4ba2dd59b52a9bf49b680d0b1b93494f039734d6fdffc381";
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
