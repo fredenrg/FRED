@@ -1,7 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
-//  Copyright (c) 2018, The FredEnergy Developers
+//  Copyright (c) 2018, The FREDEnergy Developers
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -200,7 +200,7 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 {
-    {  0xf5, 0x4c, 0x44, 0x6f, 0xca, 0x51, 0x54, 0x21, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
+    {  0xf5, 0x4c, 0x34, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
 };
 
 const char* const SEED_NODES[] = {
