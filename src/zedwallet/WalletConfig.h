@@ -1,5 +1,5 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// Copyright (c) 2018, The FredEnergy Developers
+// Copyright (c) 2018, The FRED Project
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -30,7 +30,7 @@ namespace WalletConfig
 
     /* The name of service/walletd, the programmatic rpc interface to a
        wallet */
-    const std::string walletdName = "FREDwalletd";
+    const std::string walletdName = "FRED-walletd";
 
     /* The full name of your crypto */
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
