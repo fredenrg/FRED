@@ -106,7 +106,7 @@ add_dependencies(service version)
 add_dependencies(P2P version)
 
 # Finally build the binaries
-set_property(TARGET TurtleCoind PROPERTY OUTPUT_NAME "FREDEnergyd")
+set_property(TARGET TurtleCoind PROPERTY OUTPUT_NAME "FREDdaemon")
 set_property(TARGET zedwallet PROPERTY OUTPUT_NAME "zedwallet")
-set_property(TARGET service PROPERTY OUTPUT_NAME "FRED-service")
+set_property(TARGET service PROPERTY OUTPUT_NAME "FRED-walletd")
 set_property(TARGET miner PROPERTY OUTPUT_NAME "miner")
