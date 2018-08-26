@@ -23,14 +23,14 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "FREDEnergyd";
+    const std::string daemonName = "FREDdaemon";
 
     /* The name to call this wallet */
     const std::string walletName = "zedwallet";
 
     /* The name of service/walletd, the programmatic rpc interface to a
        wallet */
-    const std::string walletdName = "FRED-service";
+    const std::string walletdName = "FREDwalletd";
 
     /* The full name of your crypto */
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
@@ -65,7 +65,7 @@ namespace WalletConfig
     const uint64_t minimumFee = CryptoNote::parameters::MINIMUM_FEE;
 
     /* The minimum amount allowed to be sent - usually 1 (in ATOMIC units!) */
-    const uint64_t minimumSend = 1000000;
+    const uint64_t minimumSend = 100000;
 
     /* Is a mixin of zero disabled on your network? */
     const bool mixinZeroDisabled = true;
