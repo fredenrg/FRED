@@ -574,7 +574,7 @@ bool CryptoNoteProtocolHandler::request_missing_objects(CryptoNoteConnectionCont
     requestMissingPoolTransactions(context);
 
     context.m_state = CryptoNoteConnectionContext::state_normal;
-    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "Successfully synchronized with the FredEnergy Network.";
+    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "Successfully synchronized with the FRED Energy Network.";
     on_connection_synchronized();
   }
   return true;
@@ -586,7 +586,7 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
     logger(Logging::INFO)
       << ENDL ;
       logger(INFO, BRIGHT_MAGENTA) << "===[ Tip! ]=============================" << ENDL ;
-      logger(INFO, WHITE) << " Always exit FredEnergyd and zedwallet with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
+      logger(INFO, WHITE) << " Always exit FREDdaemon and zedwallet with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
       logger(INFO, WHITE) << " Use the \"help\" command to see a list of available commands." << ENDL ;
       logger(INFO, WHITE) << " Use the \"export_keys\" command in zedwallet to display your keys for restoring a corrupted wallet." << ENDL ;
       logger(INFO, WHITE) << " If you need more assistance, visit - http://fredenergy.org" << ENDL ;
@@ -595,9 +595,9 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
       logger(INFO, BRIGHT_GREEN) <<
 
       #ifdef _WIN32
-      "\n FredEnergy - The ALTCoin for alternative energy \n" << ENDL;
+      "\n FRED - The ALTCoin for alternative energy \n" << ENDL;
       #else
-      "\n FredEnergy - The ALTCoin for alternative energy\n" << ENDL;
+      "\n FRED - The ALTCoin for alternative energy\n" << ENDL;
       #endif
 
     m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
