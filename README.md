@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/34389545/35821974-62e0e25c-0a70-11e8-87dd-2cfffeb6ed47.png)
+FRED a fork or turtlecoin, coming soon.
 
 #### Master Build Status
 [![Build Status](https://travis-ci.org/turtlecoin/turtlecoin.svg?branch=master)](https://travis-ci.org/turtlecoin/turtlecoin) [![Build status](https://ci.appveyor.com/api/projects/status/github/turtlecoin/turtlecoin?branch=master&svg=true)](https://ci.appveyor.com/project/RocksteadyTC/turtlecoin)
@@ -12,7 +12,7 @@
 
 There is a bash installation script for Ubuntu 16.04+ and MacOS 10.10+ which can be used to checkout and build the project from source:
 
-`$ curl -sL "https://raw.githubusercontent.com/turtlecoin/turtlecoin/master/scripts/multi_installer.sh" | bash `
+`$ curl -sL "https://raw.githubusercontent.com/fredenrg/FRED/master/scripts/multi_installer.sh" | bash `
 
 On Ubuntu you will be asked for sudo rights to install software. The binaries will be in `./src` after compilation is complete.
 
@@ -31,7 +31,7 @@ If the script doesn't work for you:
 
 ##### Building
 
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `git clone -b master --single-branch https://github.com/fredenrg/FRED`
 - `cd turtlecoin`
 - `mkdir build && cd $_`
 - `cmake ..`
@@ -47,7 +47,7 @@ If the script doesn't work for you:
 
 ##### Building
 
-- `git clone -b master https://github.com/turtlecoin/turtlecoin`
+- `git clone -b master https://github.com/fredenrg/FRED`
 - `cd turtlecoin`
 - `mkdir build && cd $_`
 - `cmake ..` or `cmake -DBOOST_ROOT=<path_to_boost_install> ..` when building
@@ -82,12 +82,14 @@ Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project,
 
 ### Copypasta for license when editing files
 
-Hi TurtleCoin contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/CryptoNoteConfig.h](https://github.com/turtlecoin/turtlecoin/commit/28cfef2575f2d767f6e512f2a4017adbf44e610e) for an example.
+Hi contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/CryptoNoteConfig.h] for an example.
 
 ```
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2018, The FRED Project
+//
 // 
 // Please see the included LICENSE file for more information.
 ```
