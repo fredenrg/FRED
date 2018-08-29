@@ -1,7 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2018, The Karai Developers
-// Copyright (c) 2018, The FredEnergy Developers
+// Copyright (c) 2018, The FRED Project
 // 
 // Please see the included LICENSE file for more information.
 
@@ -233,9 +233,9 @@ int main(int argc, char* argv[])
     logger(INFO, BRIGHT_GREEN) <<
 
       #ifdef _WIN32
-      "\n FredEnergy - The ALTCoin for alternative energy\n" << ENDL;
+      "\n FRED - The ALTCoin for alternative energy\n" << ENDL;
       #else
-      "\n FredEnergy - The ALTCoin for alternative energy\n" << ENDL;
+      "\n FRED - The ALTCoin for alternative energy\n" << ENDL;
       #endif
 
     logger(INFO, BRIGHT_GREEN) << "Welcome to " << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG;
