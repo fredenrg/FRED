@@ -14,6 +14,10 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2018, The FRED Project
+// Please see the included LICENSE file for more information.
 
 #pragma once
 #include <set>
@@ -28,8 +32,8 @@ struct TransactionValidatorState {
   std::unordered_set<Crypto::KeyImage> spentKeyImages;
 };
 
-void mergeStates(TransactionValidatorState& destionation, const TransactionValidatorState& source);
-bool hasIntersections(const TransactionValidatorState& destionation, const TransactionValidatorState& source);
+void mergeStates(TransactionValidatorState& destination, const TransactionValidatorState& source);
+bool hasIntersections(const TransactionValidatorState& destination, const TransactionValidatorState& source);
 void excludeFromState(TransactionValidatorState& state, const CachedTransaction& transaction);
 
 }
