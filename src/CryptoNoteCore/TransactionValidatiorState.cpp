@@ -14,13 +14,18 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2018, The FRED Project
+// 
+// Please see the included LICENSE file for more information.
 
 #include "TransactionValidatiorState.h"
 
 namespace CryptoNote {
 
-void mergeStates(TransactionValidatorState& destionation, const TransactionValidatorState& source) {
-  destionation.spentKeyImages.insert(source.spentKeyImages.begin(), source.spentKeyImages.end());
+void mergeStates(TransactionValidatorState& destination, const TransactionValidatorState& source) {
+  destination.spentKeyImages.insert(source.spentKeyImages.begin(), source.spentKeyImages.end());
 }
 
 bool hasIntersections(const TransactionValidatorState& destination, const TransactionValidatorState& source) {
