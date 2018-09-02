@@ -49,7 +49,7 @@ If the script doesn't work for you:
 ##### Building
 
 - `git clone -b master https://github.com/fredenrg/FRED`
-- `cd turtlecoin`
+- `cd FRED`
 - `mkdir build && cd $_`
 - `cmake ..` or `cmake -DBOOST_ROOT=<path_to_boost_install> ..` when building
   from a specific boost install. If you used brew to install boost, your path is most likely `/usr/local/include/boost.`
@@ -57,7 +57,7 @@ If the script doesn't work for you:
 
 The binaries will be in `./src` after compilation is complete.
 
-Run `./src/TurtleCoind` to connect to the network and let it sync (it may take a while).
+Run `./src/FREDdaemon` to connect to the network and let it sync (it may take a while).
 
 #### Windows 10
 
@@ -69,12 +69,12 @@ Run `./src/TurtleCoind` to connect to the network and let it sync (it may take a
 ##### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017'.
-- `cd <your_turtlecoin_directory>`
+- `cd <your_FRED_directory>`
 - `mkdir build`
 - `cd build`
 - Set the PATH variable for cmake: ie. `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
 - `cmake -G "Visual Studio 14 Win64" .. -DBOOST_ROOT=C:/local/boost_1_59_0` (Or your boost installed dir.)
-- `MSBuild TurtleCoin.sln /p:Configuration=Release /m`
+- `MSBuild FRED.sln /p:Configuration=Release /m`
 - If all went well, it will complete successfully, and you will find all your binaries in the '..\build\src\Release' directory.
 - Additionally, a `.sln` file will have been created in the `build` directory. If you wish to open the project in Visual Studio with this, you can.
 
