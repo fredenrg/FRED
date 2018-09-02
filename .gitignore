@@ -6,9 +6,10 @@
 .ycm_extra_conf.pyc
 Release
 Debug
-src/CMakeCache.txt
-src/CMakeFiles/
-src/Makefile
-src/build/
-src/cmake_install.cmake
+#src/CMakeCache.txt
+#src/CMakeFiles/
+#src/Makefile
+#src/build/
+#src/cmake_install.cmake
+CMakeFiles
 *.swp
