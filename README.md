@@ -1,7 +1,5 @@
 FRED a fork or turtlecoin, coming soon.
 
-[![Build Status](https://travis-ci.org/turtlecoin/turtlecoin.svg?branch=master)](https://travis-ci.org/turtlecoin/turtlecoin)
-[![Build status](https://ci.appveyor.com/api/projects/status/an6je6l48eawteyg?svg=true)](https://ci.appveyor.com/project/RocksteadyTC/turtlecoin)
 ### How To Compile
 
 On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
@@ -32,7 +30,7 @@ If the script doesn't work for you:
 ##### Building
 
 - `git clone -b master --single-branch https://github.com/fredenrg/FRED`
-- `cd turtlecoin`
+- `cd fred`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
