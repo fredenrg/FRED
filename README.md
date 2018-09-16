@@ -1,3 +1,5 @@
+![image](https://github.com/fredenrg/FRED/src/BinaryInfo/logo.png)
+
 FRED a fork or turtlecoin, coming soon.
 
 ### How To Compile
@@ -6,19 +8,6 @@ On Linux or Mac on a non standard architecture, and can't get GNU Readline insta
 
 Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
-#### Ubuntu 16.04+ and MacOS 10.10+
-
-There is a bash installation script for Ubuntu 16.04+ and MacOS 10.10+ which can be used to checkout and build the project from source:
-
-`$ curl -sL "https://raw.githubusercontent.com/fredenrg/FRED/master/scripts/multi_installer.sh" | bash `
-
-On Ubuntu you will be asked for sudo rights to install software. The binaries will be in `./src` after compilation is complete.
-
-This script can be used from inside the git repository to build the project from the checked out source, `./multi_installer.sh`
-
-See the script for more installation details and please consider extending it for your operating system and distribution!
-
-If the script doesn't work for you:
 
 #### Linux
 
