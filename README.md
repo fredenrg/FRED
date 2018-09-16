@@ -1,7 +1,12 @@
+![image](https://github.com/fredenrg/FRED/src/BinaryInfo/logo.png)
+
 FRED a fork or turtlecoin, coming soon.
 
+<<<<<<< HEAD
 <img src="https://github.com/fredenrg/FRED/tree/cherryp/src/BinaryInfo/fred.ico" width="32" height="32"/>
 
+=======
+>>>>>>> cherryp
 ### How To Compile
 
 On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
@@ -19,7 +24,7 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 ##### Building
 
 - `git clone -b master --single-branch https://github.com/fredenrg/FRED`
-- `cd turtlecoin`
+- `cd fred`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
