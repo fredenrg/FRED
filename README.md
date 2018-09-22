@@ -1,6 +1,7 @@
-![image](https://github.com/fredenrg/FRED/src/BinaryInfo/logo.png)
+![logo](https://user-images.githubusercontent.com/39649555/45918948-8e395680-be9f-11e8-9c94-df695ea0fe3f.png)
 
-FRED a fork or turtlecoin, coming soon.
+FRED The ALTCoin for Alternative Energy.
+
 
 ### How To Compile
 
