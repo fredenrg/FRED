@@ -47,7 +47,6 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(565600000000000000);
 
-*/
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff00018080d8e7c0c6daec0702e471b3580dc20a00170448e1ab2a008e7150800b10424d9893357288a6ba3d522101440648726d4ccb7ee5896263eee99f480bfa51b556881bbbbf6a27bc902d2ea2";
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
