@@ -3,11 +3,7 @@
 FRED The ALTCoin for Alternative Energy.
 
 
-<<<<<<< HEAD
-<img src="https://github.com/fredenrg/FRED/tree/cherryp/src/BinaryInfo/fred.ico" width="32" height="32"/>
 
-=======
->>>>>>> cherryp
 ### How To Compile
 
 On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
