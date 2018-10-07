@@ -37,6 +37,7 @@ const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 3;
 
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 100;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 14000;
 
 const uint64_t DIFFICULTY_WINDOW_V3                          = 60;
 const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                    = DIFFICULTY_WINDOW_V3 + 1;
@@ -48,6 +49,7 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(565600000000000000);
 
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff00018080d8e7c0c6daec0702e471b3580dc20a00170448e1ab2a008e7150800b10424d9893357288a6ba3d522101440648726d4ccb7ee5896263eee99f480bfa51b556881bbbbf6a27bc902d2ea2";
+const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1535298202;
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 200000;
@@ -59,13 +61,22 @@ const uint64_t MINIMUM_FEE                                   = UINT64_C(10000000
 
 const uint64_t MINIMUM_MIXIN_V1                              = 0;
 const uint64_t MAXIMUM_MIXIN_V1                              = 5;
+    
 const uint64_t MINIMUM_MIXIN_V2                              = 2;
 const uint64_t MAXIMUM_MIXIN_V2                              = 5;
-
+    
+const uint64_t MINIMUM_MIXIN_V3                              = 3;
+const uint64_t MAXIMUM_MIXIN_V3                              = 3;
+    
 const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 0;
 const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 1;
+const uint32_t MIXIN_LIMITS_V3_HEIGHT                        = 14000;
 
 const uint64_t DEFAULT_MIXIN                                 = MINIMUM_MIXIN_V2;
+const uint64_t DEFAULT_MIXIN_V0                              = 3;
+const uint64_t DEFAULT_MIXIN_V1                              = MAXIMUM_MIXIN_V1;
+const uint64_t DEFAULT_MIXIN_V2                              = MAXIMUM_MIXIN_V2;
+const uint64_t DEFAULT_MIXIN_V3                              = MAXIMUM_MIXIN_V3;
 
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 const uint64_t DEFAULT_DUST_THRESHOLD_V2                     = UINT64_C(0);
@@ -187,5 +198,6 @@ const char* const SEED_NODES[] = {
   "142.93.81.195:31806", //seed2
   "165.227.37.180:31806", //seed3
   "142.93.199.193:31806", //Pseed4
+  "167.99.181.195:31806" //expl
 };
 } // CryptoNote
