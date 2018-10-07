@@ -1,7 +1,19 @@
 ![logo](https://user-images.githubusercontent.com/39649555/45918948-8e395680-be9f-11e8-9c94-df695ea0fe3f.png)
 
+<<<<<<< HEAD
 FRED The ALTCoin for Alternative Energy.
 
+=======
+#### Master Build Status
+[![Build Status](https://travis-ci.org/turtlecoin/turtlecoin.svg?branch=master)](https://travis-ci.org/turtlecoin/turtlecoin) [![Build status](https://ci.appveyor.com/api/projects/status/github/turtlecoin/turtlecoin?branch=master&svg=true)](https://ci.appveyor.com/project/RocksteadyTC/turtlecoin)
+
+#### Development Build Status
+[![Build Status](https://travis-ci.org/turtlecoin/turtlecoin.svg?branch=development)](https://travis-ci.org/turtlecoin/turtlecoin) [![Build status](https://ci.appveyor.com/api/projects/status/github/turtlecoin/turtlecoin?branch=development&svg=true)](https://ci.appveyor.com/project/RocksteadyTC/turtlecoin)
+
+### How To Compile
+
+#### Ubuntu LTS and MacOS 10.10+
+>>>>>>> upstream_remote/master
 
 
 ### How To Compile
@@ -11,12 +23,30 @@ On Linux or Mac on a non standard architecture, and can't get GNU Readline insta
 Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 
+#### [new!] Raspberry Pi 3 B+
+The following images are known to work.
+
+##### OS Distribution
+
+- https://github.com/Crazyhead90/pi64/releases
+- https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi#aarch64_supported_images_for_Raspberry_Pi_3
+- https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+
+##### Building
+
+- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `cd turtlecoin`
+- `mkdir build && cd $_`
+- `cmake ..`
+- `make`
+
+
 #### Linux
 
 ##### Prerequisites
 
-- You will need the following packages: boost (1.55 or higher), rocksdb, cmake, git, gcc (4.9 or higher), g++ (4.9 or higher), make, GNU readline, and python. Most of these should already be installed on your system.
-- For example on Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev libreadline-dev`
+- You will need the following packages: boost (1.55 or higher), rocksdb, cmake, git, gcc (4.9 or higher), g++ (4.9 or higher), make, and python. Most of these should already be installed on your system.
+- For example on Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev`
 
 ##### Building
 
@@ -32,7 +62,6 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 - Install [cmake](https://cmake.org/). See [here](https://stackoverflow.com/questions/23849962/cmake-installer-for-mac-fails-to-create-usr-bin-symlinks) if you are unable call `cmake` from the terminal after installing.
 - Install the [boost](http://www.boost.org/) libraries. Either compile boost manually or run `brew install boost`.
-- Install [GNU Readline](https://tiswww.case.edu/php/chet/readline/rltop.html) by running `brew install readline; brew link --force readline`. - Make sure you run this full command, or it will link the wrong version of readline
 - Install XCode and Developer Tools.
 
 ##### Building

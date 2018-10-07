@@ -1,4 +1,5 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
+<<<<<<< HEAD
 //
 // This file is part of Bytecoin.
 //
@@ -17,6 +18,11 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2018, The FRED Project
+=======
+// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2018, The TurtleCoin Developers
+// 
+>>>>>>> upstream_remote/master
 // Please see the included LICENSE file for more information.
 
 #pragma once
