@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/39649555/45918948-8e395680-be9f-11e8-9c94-df695ea0fe3f.png)
+![fredlogo1510-350png](https://user-images.githubusercontent.com/39649555/46959635-8a1ee400-d0ad-11e8-8852-478d4780fa60.png)
 
 FRED The ALTCoin for Alternative Energy.
 
@@ -13,7 +13,7 @@ Our aims are;
  
  - We want to be the place to go for consumer alternative energy suppliers, distributers and installers through the development of a global directory.
 
-
+Massive thanks to the TurtleCoin developers and their great community.
 
 ### How To Compile
 
