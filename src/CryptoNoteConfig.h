@@ -35,9 +35,9 @@ const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t ZAWY_DIFFICULTY_V2                              = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 3;
 
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 620000;
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 700000;
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 800000;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 100;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 30000;
 
 const uint64_t DIFFICULTY_WINDOW_V3                          = 60;
 const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                    = DIFFICULTY_WINDOW_V3 + 1;
@@ -49,6 +49,7 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(565600000000000000);
 
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff00018080d8e7c0c6daec0702e471b3580dc20a00170448e1ab2a008e7150800b10424d9893357288a6ba3d522101440648726d4ccb7ee5896263eee99f480bfa51b556881bbbbf6a27bc902d2ea2";
+const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1535298202;
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 200000;
@@ -59,18 +60,18 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 9;
 const uint64_t MINIMUM_FEE                                   = UINT64_C(100000000);
 
 const uint64_t MINIMUM_MIXIN_V1                              = 0;
-const uint64_t MAXIMUM_MIXIN_V1                              = 100;
+const uint64_t MAXIMUM_MIXIN_V1                              = 5;
 
-const uint64_t MINIMUM_MIXIN_V2                              = 7;
-const uint64_t MAXIMUM_MIXIN_V2                              = 7;
+const uint64_t MINIMUM_MIXIN_V2                              = 2;
+const uint64_t MAXIMUM_MIXIN_V2                              = 5;
 
-const uint64_t MINIMUM_MIXIN_V3                              = 3;
+const uint64_t MINIMUM_MIXIN_V3                              = 0;
 const uint64_t MAXIMUM_MIXIN_V3                              = 3;
 
 /* The heights to activate the mixin limits at */
-const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 440000;
-const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 620000;
-const uint32_t MIXIN_LIMITS_V3_HEIGHT                        = 800000;
+const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 0;
+const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 1;
+const uint32_t MIXIN_LIMITS_V3_HEIGHT                        = 21500;
 
 /* The mixin to use by default with zedwallet and turtle-service */
 /* DEFAULT_MIXIN_V0 is the mixin used before MIXIN_LIMITS_V1_HEIGHT is started */
@@ -83,7 +84,7 @@ const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 const uint64_t DEFAULT_DUST_THRESHOLD_V2                     = UINT64_C(0);
 
 const uint32_t DUST_THRESHOLD_V2_HEIGHT                      = MIXIN_LIMITS_V2_HEIGHT;
-const uint32_t FUSION_DUST_THRESHOLD_HEIGHT_V2               = 800000;
+const uint32_t FUSION_DUST_THRESHOLD_HEIGHT_V2               = 21500;
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 17;
@@ -116,7 +117,7 @@ const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 const uint32_t KEY_IMAGE_CHECKING_BLOCK_INDEX                = 0;
 const uint32_t UPGRADE_HEIGHT_V2                             = 1;
 const uint32_t UPGRADE_HEIGHT_V3                             = 2;
-const uint32_t UPGRADE_HEIGHT_V4                             = 360000; // Upgrade height for CN-Lite Variant 1 switch.
+const uint32_t UPGRADE_HEIGHT_V4                             = 140000; // Upgrade height for CN-Lite Variant 1 switch.
 const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V4;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -127,8 +128,8 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 /* Block heights we are going to have hard forks at */
 const uint64_t FORK_HEIGHTS[] =
 {
-    180000,  // 0
-    360000,  // 1
+    140000,  // 0
+    200000,  // 1
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
@@ -176,6 +177,11 @@ const int      RPC_DEFAULT_PORT                              =  31807;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
+    
+// P2P Network Configuration Section - This defines our current P2P network version
+// and the minimum version for communication between nodes
+const uint8_t  P2P_CURRENT_VERSION                           = 2;
+const uint8_t  P2P_MINIMUM_VERSION                           = 1;
 
 const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 64 * 1024 * 1024; // 64 MB
 const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
@@ -189,7 +195,7 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char     LATEST_VERSION_URL[]                          = "http://latest.turtlecoin.lol";
+const char     LATEST_VERSION_URL[]                          = "https://github.com/fredenrg/FRED/releases";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
     {  0xf5, 0x4c, 0x34, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
@@ -200,5 +206,6 @@ const char* const SEED_NODES[] = {
   "142.93.81.195:31806", //seed2
   "165.227.37.180:31806", //seed3
   "142.93.199.193:31806", //Pseed4
+  "167.99.181.195:31806", //Exp   
 };
 } // CryptoNote
