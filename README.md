@@ -33,7 +33,7 @@ The following images are known to work.
 
 ##### Building
 
-- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `git clone -b master --single-branch https://github.com/fredenrg/FRED.git`
 - `cd turtlecoin`
 - `mkdir build && cd $_`
 - `cmake ..`
