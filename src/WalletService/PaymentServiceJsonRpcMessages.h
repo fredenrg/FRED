@@ -1,19 +1,8 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
-//
-// This file is part of Bytecoin.
-//
-// Bytecoin is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Bytecoin is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2018, The TurtleCoin Developers
+// 
+// Please see the included LICENSE file for more information.
 
 #pragma once
 
@@ -25,9 +14,11 @@
 
 namespace PaymentService {
 
-const uint32_t DEFAULT_ANONYMITY_LEVEL = 6;
+/* Forward declaration to avoid circular dependency from including "WalletService.h" */
+class WalletService;
 
 class RequestSerializationError: public std::exception {
+
 public:
   virtual const char* what() const throw() override { return "Request error"; }
 };
@@ -57,6 +48,10 @@ struct Export {
 struct Reset {
   struct Request {
     std::string viewSecretKey;
+
+    uint64_t scanHeight = 0;
+
+    bool newAddress = false;
 
     void serialize(CryptoNote::ISerializer& serializer);
   };
@@ -124,6 +119,10 @@ struct CreateAddress {
     std::string spendSecretKey;
     std::string spendPublicKey;
 
+    uint64_t scanHeight = 0;
+
+    bool newAddress = false;
+
     void serialize(CryptoNote::ISerializer& serializer);
   };
 
@@ -137,6 +136,10 @@ struct CreateAddress {
 struct CreateAddressList {
   struct Request {
     std::vector<std::string> spendSecretKeys;
+
+    uint64_t scanHeight = 0;
+
+    bool newAddress = false;
 
     void serialize(CryptoNote::ISerializer& serializer);
   };
@@ -320,12 +323,12 @@ struct SendTransaction {
     std::vector<WalletRpcOrder> transfers;
     std::string changeAddress;
     uint64_t fee = 0;
-    uint32_t anonymity = DEFAULT_ANONYMITY_LEVEL;
+    uint32_t anonymity;
     std::string extra;
     std::string paymentId;
     uint64_t unlockTime = 0;
 
-    void serialize(CryptoNote::ISerializer& serializer);
+    void serialize(CryptoNote::ISerializer& serializer, const WalletService &service);
   };
 
   struct Response {
@@ -341,12 +344,12 @@ struct CreateDelayedTransaction {
     std::vector<WalletRpcOrder> transfers;
     std::string changeAddress;
     uint64_t fee = 0;
-    uint32_t anonymity = DEFAULT_ANONYMITY_LEVEL;
+    uint32_t anonymity;
     std::string extra;
     std::string paymentId;
     uint64_t unlockTime = 0;
 
-    void serialize(CryptoNote::ISerializer& serializer);
+    void serialize(CryptoNote::ISerializer& serializer, const WalletService &service);
   };
 
   struct Response {
@@ -395,11 +398,11 @@ struct SendDelayedTransaction {
 struct SendFusionTransaction {
   struct Request {
     uint64_t threshold;
-    uint32_t anonymity = DEFAULT_ANONYMITY_LEVEL;
+    uint32_t anonymity;
     std::vector<std::string> addresses;
     std::string destinationAddress;
 
-    void serialize(CryptoNote::ISerializer& serializer);
+    void serialize(CryptoNote::ISerializer& serializer, const WalletService &service);
   };
 
   struct Response {
@@ -436,6 +439,19 @@ struct CreateIntegratedAddress {
   struct Response {
     std::string integratedAddress;
 
+    void serialize(CryptoNote::ISerializer& serializer);
+  };
+};
+
+struct NodeFeeInfo {
+  struct Request {
+    void serialize(CryptoNote::ISerializer& serializer);
+  };
+  
+  struct Response {
+    std::string address;
+    uint32_t amount;
+    
     void serialize(CryptoNote::ISerializer& serializer);
   };
 };

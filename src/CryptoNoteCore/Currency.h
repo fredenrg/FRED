@@ -15,7 +15,6 @@
 #include "../Logging/LoggerRef.h"
 #include "CachedBlock.h"
 #include "CryptoNoteBasic.h"
-#include "Difficulty.h"
 
 namespace CryptoNote {
 
@@ -29,8 +28,18 @@ public:
   uint64_t publicAddressBase58Prefix() const { return m_publicAddressBase58Prefix; }
   uint32_t minedMoneyUnlockWindow() const { return m_minedMoneyUnlockWindow; }
 
-  size_t timestampCheckWindow() const { return m_timestampCheckWindow; }
-  uint64_t blockFutureTimeLimit() const { return m_blockFutureTimeLimit; }
+  size_t timestampCheckWindow(uint32_t blockHeight) const
+  {
+      if (blockHeight >= CryptoNote::parameters::LWMA_2_DIFFICULTY_BLOCK_INDEX_V3)
+      {
+          return CryptoNote::parameters::BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3;
+      }
+      else
+      {
+          return m_timestampCheckWindow;
+      }
+  }
+
   uint64_t blockFutureTimeLimit(uint32_t blockHeight) const
   {
       if (blockHeight >= CryptoNote::parameters::LWMA_2_DIFFICULTY_BLOCK_INDEX_V2)
@@ -144,16 +153,13 @@ size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uint32_t h
   std::string formatAmount(int64_t amount) const;
   bool parseAmount(const std::string& str, uint64_t& amount) const;
 
-  Difficulty getNextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps, std::vector<Difficulty> cumulativeDifficulties) const;
-  Difficulty nextDifficulty(std::vector<uint64_t> timestamps, std::vector<Difficulty> cumulativeDifficulties) const;
-Difficulty nextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps, std::vector<Difficulty> cumulativeDifficulties) const;
-  Difficulty nextDifficultyV3(std::vector<uint64_t> timestamps, std::vector<Difficulty> cumulative_difficulties) const;
-  Difficulty nextDifficultyV4(std::vector<std::uint64_t> timestamps, std::vector<Difficulty> cumulativeDifficulties) const;
+  uint64_t getNextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps, std::vector<uint64_t> cumulativeDifficulties) const;
+  uint64_t nextDifficulty(uint8_t version, uint32_t blockIndex, std::vector<uint64_t> timestamps, std::vector<uint64_t> cumulativeDifficulties) const;
 
 
-  bool checkProofOfWorkV1(const CachedBlock& block, Difficulty currentDifficulty) const;
-  bool checkProofOfWorkV2(const CachedBlock& block, Difficulty currentDifficulty) const;
-  bool checkProofOfWork(const CachedBlock& block, Difficulty currentDifficulty) const;
+  bool checkProofOfWorkV1(const CachedBlock& block, uint64_t currentDifficulty) const;
+  bool checkProofOfWorkV2(const CachedBlock& block, uint64_t currentDifficulty) const;
+  bool checkProofOfWork(const CachedBlock& block, uint64_t currentDifficulty) const;
 
   Currency(Currency&& currency);
 

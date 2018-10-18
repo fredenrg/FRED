@@ -10,7 +10,7 @@ Our aims are;
 - To collaborate with engineers, scientists and hobbyist inventors to bring possible energy saving devices to the public.
 
  - To raise awareness to the benefits of alternative energy generation at consumer level and explore the possibilities of free energy.
- 
+
  - We want to be the place to go for consumer alternative energy suppliers, distributers and installers through the development of a global directory.
 
 Massive thanks to the TurtleCoin developers and their great community.
@@ -22,12 +22,30 @@ On Linux or Mac on a non standard architecture, and can't get GNU Readline insta
 Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 
+#### [new!] Raspberry Pi 3 B+
+The following images are known to work.
+
+##### OS Distribution
+
+- https://github.com/Crazyhead90/pi64/releases
+- https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi#aarch64_supported_images_for_Raspberry_Pi_3
+- https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+
+##### Building
+
+- `git clone -b master --single-branch https://github.com/turtlecoin/turtlecoin`
+- `cd turtlecoin`
+- `mkdir build && cd $_`
+- `cmake ..`
+- `make`
+
+
 #### Linux
 
 ##### Prerequisites
 
-- You will need the following packages: boost (1.55 or higher), rocksdb, cmake, git, gcc (4.9 or higher), g++ (4.9 or higher), make, GNU readline, and python. Most of these should already be installed on your system.
-- For example on Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev libreadline-dev`
+- You will need the following packages: boost (1.55 or higher), rocksdb, cmake, git, gcc (4.9 or higher), g++ (4.9 or higher), make, and python. Most of these should already be installed on your system.
+- For example on Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev`
 
 ##### Building
 
@@ -43,7 +61,6 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 - Install [cmake](https://cmake.org/). See [here](https://stackoverflow.com/questions/23849962/cmake-installer-for-mac-fails-to-create-usr-bin-symlinks) if you are unable call `cmake` from the terminal after installing.
 - Install the [boost](http://www.boost.org/) libraries. Either compile boost manually or run `brew install boost`.
-- Install [GNU Readline](https://tiswww.case.edu/php/chet/readline/rltop.html) by running `brew install readline; brew link --force readline`. - Make sure you run this full command, or it will link the wrong version of readline
 - Install XCode and Developer Tools.
 
 ##### Building
@@ -91,6 +108,6 @@ Hi contributor, thanks for forking and sending back Pull Requests. Extensive doc
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2018, The FRED Project
 //
-// 
+//
 // Please see the included LICENSE file for more information.
 ```
