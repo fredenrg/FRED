@@ -34,7 +34,7 @@ The following images are known to work.
 ##### Building
 
 - `git clone -b master --single-branch https://github.com/fredenrg/FRED.git`
-- `cd turtlecoin`
+- `cd FRED`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
@@ -50,7 +50,7 @@ The following images are known to work.
 ##### Building
 
 - `git clone -b master --single-branch https://github.com/fredenrg/FRED`
-- `cd fred`
+- `cd FRED`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
