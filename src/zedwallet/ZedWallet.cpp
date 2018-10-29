@@ -21,7 +21,7 @@
 #include <zedwallet/Menu.h>
 #include <zedwallet/ParseArguments.h>
 #include <zedwallet/Tools.h>
-#include <zedwallet/WalletConfig.h>
+#include <config/WalletConfig.h>
 
 int main(int argc, char **argv)
 {
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     Logging::LoggerRef logger(logManager, WalletConfig::walletName);
 
     /* Currency contains our coin parameters, such as decimal places, supply */
-    const CryptoNote::Currency currency 
+    const CryptoNote::Currency currency
         = CryptoNote::CurrencyBuilder(logManager).currency();
 
     System::Dispatcher localDispatcher;
@@ -68,30 +68,26 @@ int main(int argc, char **argv)
 
     /* Our connection to freddaemon */
     std::unique_ptr<CryptoNote::INode> node(
-        new CryptoNote::NodeRpcProxy(config.host, config.port, 
+        new CryptoNote::NodeRpcProxy(config.host, config.port,
                                      logger.getLogger()));
 
     std::promise<std::error_code> errorPromise;
-    std::future<std::error_code> error = errorPromise.get_future();
-    auto callback = [&errorPromise](std::error_code e) 
-                    {errorPromise.set_value(e); };
+
+    /* Once the function is complete, set the error value from the promise */
+    auto callback = [&errorPromise](std::error_code e)
+    {
+        errorPromise.set_value(e);
+    };
+
+    /* Get the future of the result */
+    auto initNode = errorPromise.get_future();
 
     node->init(callback);
-
-    std::future<void> initNode = std::async(std::launch::async, [&]
-    {
-            if (error.get())
-            {
-                throw std::runtime_error("Failed to initialize node!");
-            }
-    });
-
-    std::future_status status = initNode.wait_for(std::chrono::seconds(20));
 
     /* Connection took to long to remote node, let program continue regardless
        as they could perform functions like export_keys without being
        connected */
-    if (status != std::future_status::ready)
+    if (initNode.wait_for(std::chrono::seconds(20)) != std::future_status::ready)
     {
         if (config.host != "127.0.0.1")
         {
@@ -109,7 +105,7 @@ int main(int argc, char **argv)
                       << std::endl << std::endl;
         }
     }
-    
+
     /*
       This will check to see if the node responded to /feeinfo and actually
       returned something that it expects us to use for convenience charges
@@ -117,22 +113,22 @@ int main(int argc, char **argv)
     */
     if (node->feeAmount() != 0 && !node->feeAddress().empty()) {
       std::stringstream feemsg;
-      
+
       feemsg << std::endl << "You have connected to a node that charges " <<
              "a fee to send transactions." << std::endl << std::endl
-             << "The fee for sending transactions is: " << 
-             formatAmount(node->feeAmount()) << 
+             << "The fee for sending transactions is: " <<
+             formatAmount(node->feeAmount()) <<
              " per transaction." << std::endl << std::endl <<
              "If you don't want to pay the node fee, please " <<
              "relaunch " << WalletConfig::walletName <<
              " and specify a different node or run your own." <<
              std::endl;
-             
+
       std::cout << WarningMsg(feemsg.str()) << std::endl;
     }
 
     /* Create the wallet instance */
-    CryptoNote::WalletGreen wallet(*dispatcher, currency, *node, 
+    CryptoNote::WalletGreen wallet(*dispatcher, currency, *node,
                                    logger.getLogger());
 
     /* Run the interactive wallet interface */
@@ -167,72 +163,6 @@ void run(CryptoNote::WalletGreen &wallet, CryptoNote::INode &node,
 
         mainLoop(walletInfo, node);
     }
-    
+
     shutdown(walletInfo, node, alreadyShuttingDown);
-}
-
-bool shutdown(std::shared_ptr<WalletInfo> walletInfo, CryptoNote::INode &node,
-              bool &alreadyShuttingDown)
-{
-    if (alreadyShuttingDown)
-    {
-        std::cout << "Hang fire, we're already shutting down!" 
-                  << std::endl;
-
-        return false;
-    }
-
-    std::cout << InformationMsg("Shutting down...") << std::endl;
-
-    alreadyShuttingDown = true;
-
-    bool finishedShutdown = false;
-
-    std::thread timelyShutdown([&finishedShutdown]
-    {
-        const auto startTime = std::chrono::system_clock::now();
-
-        /* Has shutdown finished? */
-        while (!finishedShutdown)
-        {
-            const auto currentTime = std::chrono::system_clock::now();
-
-            /* If not, wait for a max of 20 seconds then force exit. */
-            if ((currentTime - startTime) > std::chrono::seconds(20))
-            {
-                std::cout << WarningMsg("Wallet took too long to save! "
-                                        "Force closing.") << std::endl
-                          << "Bye." << std::endl;
-                exit(0);
-            }
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    });
-
-    if (walletInfo != nullptr)
-    {
-        std::cout << InformationMsg("Saving wallet file...") << std::endl;
-
-        walletInfo->wallet.save();
-
-        std::cout << InformationMsg("Shutting down wallet interface...")
-                  << std::endl;
-
-        walletInfo->wallet.shutdown();
-    }
-
-    std::cout << InformationMsg("Shutting down node connection...")
-              << std::endl;
-
-    node.shutdown();
-
-    finishedShutdown = true;
-
-    /* Wait for shutdown watcher to finish */
-    timelyShutdown.join();
-
-    std::cout << "Bye." << std::endl;
-    
-    return true;
 }
