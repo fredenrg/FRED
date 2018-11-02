@@ -135,7 +135,7 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 const uint64_t FORK_HEIGHTS[] =
 {
     31167,  // 0
-    31189,  // 1
+    90000,  // 1
     100000,  //2
 };
 
