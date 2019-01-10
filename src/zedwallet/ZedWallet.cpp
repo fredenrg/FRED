@@ -6,10 +6,9 @@
 #include <zedwallet/ZedWallet.h>
 ////////////////////////////////
 
+#include <config/CliHeader.h>
 #include <Common/SignalHandler.h>
-
 #include <CryptoNoteCore/Currency.h>
-
 #include <Logging/FileLogger.h>
 #include <Logging/LoggerManager.h>
 
@@ -35,11 +34,7 @@ int main(int argc, char **argv)
 
     Config config = parseArguments(argc, argv);
 
-    /* User requested --help or --version, or invalid arguments */
-    if (config.exit)
-    {
-        return 0;
-    }
+    std::cout << InformationMsg(CryptoNote::getProjectCLIHeader()) << std::endl;
 
     Logging::LoggerManager logManager;
 
@@ -138,20 +133,18 @@ int main(int argc, char **argv)
 void run(CryptoNote::WalletGreen &wallet, CryptoNote::INode &node,
          Config &config)
 {
-    std::cout << InformationMsg(getVersion()) << std::endl;
-
-    std::shared_ptr<WalletInfo> walletInfo;
-
-    bool quit;
-
-    std::tie(quit, walletInfo) = selectionScreen(config, wallet, node);
+    auto[quit, walletInfo] = selectionScreen(config, wallet, node);
 
     bool alreadyShuttingDown = false;
 
     if (!quit)
     {
         /* Call shutdown on ctrl+c */
-        Tools::SignalHandler::install([&]
+        /* walletInfo = walletInfo - workaround for
+           https://stackoverflow.com/a/46115028/8737306 - standard &
+           capture works in newer compilers. */
+        Tools::SignalHandler::install([&walletInfo = walletInfo, &node,
+                                       &alreadyShuttingDown]
         {
             /* If we're already shutting down let control flow continue
                as normal */

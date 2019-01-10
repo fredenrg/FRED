@@ -2,6 +2,8 @@ add_definitions(-DSTATICLIB)
 
 include_directories(${CMAKE_SOURCE_DIR}/external/rocksdb/include)
 include_directories(${CMAKE_SOURCE_DIR}/external/linenoise)
+include_directories(${CMAKE_SOURCE_DIR}/external/json)
+include_directories(${CMAKE_SOURCE_DIR}/external/cxxopts)
 
 file(GLOB_RECURSE BlockchainExplorer BlockchainExplorer/*)
 file(GLOB_RECURSE Common Common/*)
@@ -106,6 +108,8 @@ target_link_libraries(cryptotest Crypto Common)
 # In this case it's because we need to have the current version name rather
 # than a cached one
 add_dependencies(WalletService version)
+add_dependencies(JsonRpcServer version)
+add_dependencies(miner version)
 add_dependencies(Rpc version)
 add_dependencies(FREDdaemon version)
 add_dependencies(zedwallet version)
