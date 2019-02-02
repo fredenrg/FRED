@@ -40,7 +40,7 @@ const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 100;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 30000;
 
-const uint64_t LWMA_3_DIFFICULTY_BLOCK_INDEX                 = 280000;
+//const uint64_t LWMA_3_DIFFICULTY_BLOCK_INDEX                 = 280000;
 
 const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
@@ -126,7 +126,7 @@ const uint32_t KEY_IMAGE_CHECKING_BLOCK_INDEX                = 0;
 const uint32_t UPGRADE_HEIGHT_V2                             = 1;
 const uint32_t UPGRADE_HEIGHT_V3                             = 2;
 const uint32_t UPGRADE_HEIGHT_V4                             = 55000; // Upgrade height for CN-Lite Variant 1 switch.
-//  const uint32_t UPGRADE_HEIGHT_V5                             = 140000; // Upgrade height for CN-Turtle Variant 2 switch.
+//  const uint32_t UPGRADE_HEIGHT_V5                             = 240000; // Upgrade height for CN-Turtle Variant 2 switch.
 const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V4;
 
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
@@ -141,7 +141,7 @@ const uint64_t FORK_HEIGHTS[] =
     30000,  // 0
     55000,  // 1
     140000,  //2
-    180000,  //3
+    240000,  //3
     
 };
 
@@ -203,7 +203,7 @@ const uint8_t  P2P_MINIMUM_VERSION                           = 3;
 // const uint8_t P2P_LITE_BLOCKS_PROPOGATION_VERSION            = 4;
 // This defines the number of versions ahead we must see peers before we start displaying
 // warning messages that we need to upgrade our software.
-const uint8_t  P2P_UPGRADE_WINDOW                            = 3;
+const uint8_t  P2P_UPGRADE_WINDOW                            = 2;
 
 const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 64 * 1024 * 1024; // 64 MB
 const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
