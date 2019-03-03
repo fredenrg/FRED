@@ -110,11 +110,11 @@ const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR         = 100 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR       = 365 * 24 * 60 * 60 / DIFFICULTY_TARGET;
 const uint64_t MAX_EXTRA_SIZE                                = 140000;
 const uint64_t MAX_EXTRA_SIZE_V2                             = 1024;
-const uint64_t MAX_EXTRA_SIZE_V2_HEIGHT                      = 125000;
+const uint64_t MAX_EXTRA_SIZE_V2_HEIGHT                      = 116250;
 
 /* For new projects forked from this code base, this value should be
    changed to 0 to prevent a possible transaction bloat exploit */
-const uint64_t TRANSACTION_SIGNATURE_COUNT_VALIDATION_HEIGHT = 125000;
+const uint64_t TRANSACTION_SIGNATURE_COUNT_VALIDATION_HEIGHT = 116250;
 
 const uint64_t CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS     = 1;
 const uint64_t CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_SECONDS    = DIFFICULTY_TARGET * CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS;
@@ -130,7 +130,7 @@ const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 const uint32_t UPGRADE_HEIGHT_V2                             = 1;
 const uint32_t UPGRADE_HEIGHT_V3                             = 2;
 const uint32_t UPGRADE_HEIGHT_V4                             = 55000; // Upgrade height for CN-Lite Variant 1 switch.
-const uint32_t UPGRADE_HEIGHT_V5                             = 125000; // Upgrade height for CN-Turtle Variant 2 switch.
+const uint32_t UPGRADE_HEIGHT_V5                             = 116250; // Upgrade height for CN-Turtle Variant 2 switch.
 const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V5;
 
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
@@ -144,7 +144,7 @@ const uint64_t FORK_HEIGHTS[] =
 {
     30000,  // 0
     55000,  // 1
-    125000,  //2
+    116250,  //2
     150000,  //3
     200000,  //4
 
@@ -174,7 +174,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "FREDEnergy";
+const char     CRYPTONOTE_NAME[]                             = "fredtest";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -193,8 +193,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  32808;
-const int      RPC_DEFAULT_PORT                              =  32809;
+const int      P2P_DEFAULT_PORT                              =  32777;
+const int      RPC_DEFAULT_PORT                              =  32888;
 const int      SERVICE_DEFAULT_PORT                          =  8070;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
@@ -233,13 +233,12 @@ const char     LATEST_VERSION_URL[]                          = "http://fredenerg
 const std::string LICENSE_URL                                = "https://github.com/fredenrg/FRED/releases";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0xf7, 0x5c, 0x44, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
+    {  0xbd, 0xf8, 0x99, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
 };
 
 const char* const SEED_NODES[] = {
-  "165.227.28.154:32808", //1
-  "165.227.180.240:32808", //2
-  "142.93.21.236:32808", //3
-  "138.197.136.212:32808" //4
+  "68.183.34.79:32777", //1
+  "68.183.67.158:32777" //2
+
 };
 } // CryptoNote
