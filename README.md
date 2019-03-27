@@ -7,11 +7,14 @@ Over the next few decades the worlds energy demands are expected to grow by 30%,
 To minimise the impact on both environment and consumer, we believe that the future is the consumer generating their own electricity.
 
 Our aims are;
+
+- To facilitate alternative energy generation through the implementation of solar and wind energy generation projects.
+
+- To raise awareness to the benefits of alternative energy generation at consumer level and explore the possibilities of new energy devices. 
+
 - To collaborate with engineers, scientists and hobbyist inventors to bring possible energy saving devices to the public.
 
- - To raise awareness to the benefits of alternative energy generation at consumer level and explore the possibilities of free energy.
-
- - We want to be the place to go for consumer alternative energy suppliers, distributers and installers through the development of a global directory.
+- We aim to be the place to go for consumer alternative energy products through the development of a global directory.
 
 Massive thanks to the TurtleCoin developers and their great community.
 ### Installing
