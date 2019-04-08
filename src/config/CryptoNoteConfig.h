@@ -176,7 +176,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "FREDEnergy";
+const char     CRYPTONOTE_NAME[]                             = "fredtest";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -195,8 +195,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  32808;
-const int      RPC_DEFAULT_PORT                              =  32809;
+const int      P2P_DEFAULT_PORT                              =  32806;
+const int      RPC_DEFAULT_PORT                              =  32807;
 const int      SERVICE_DEFAULT_PORT                          =  8070;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
@@ -235,13 +235,11 @@ const char     LATEST_VERSION_URL[]                          = "http://fredenerg
 const std::string LICENSE_URL                                = "https://github.com/fredenrg/FRED/releases";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0xf7, 0x5c, 0x44, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
+    {  0xbd, 0xf8, 0x99, 0x6f, 0xcd, 0x51, 0x54, 0x27, 0x35, 0xf8, 0x41, 0xb4, 0xa6, 0xd1, 0x63, 0xf9  }
 };
 
 const char* const SEED_NODES[] = {
-  "165.227.28.154:32808", //1
-  "165.227.180.240:32808", //2
-  "142.93.21.236:32808", //3
-  "138.197.136.212:32808" //4
+  "159.203.5.123:32806", //1
+  "159.203.7.189:32806"
 };
 } // CryptoNote
