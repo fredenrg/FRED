@@ -40,8 +40,6 @@ const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 100;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 30000;
 
-const uint64_t LWMA_3_DIFFICULTY_BLOCK_INDEX                 = 280000;
-
 const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
@@ -145,13 +143,12 @@ const uint64_t FORK_HEIGHTS[] =
     30000,  // 0
     55000,  // 1
     125000,  //2
-    150000,  //3
-    200000,  //4
+    145000,  //3
 
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
-const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 2;
+const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 3;
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
@@ -202,8 +199,8 @@ const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
 
 // P2P Network Configuration Section - This defines our current P2P network version
 // and the minimum version for communication between nodes
-const uint8_t  P2P_CURRENT_VERSION                           = 4;
-const uint8_t  P2P_MINIMUM_VERSION                           = 3;
+const uint8_t  P2P_CURRENT_VERSION                           = 5;
+const uint8_t  P2P_MINIMUM_VERSION                           = 4;
 
 // This defines the minimum P2P version required for lite blocks propogation
 const uint8_t P2P_LITE_BLOCKS_PROPOGATION_VERSION            = 4;
