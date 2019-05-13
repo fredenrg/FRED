@@ -1,4 +1,4 @@
-![fredlogo1510-350png](https://user-images.githubusercontent.com/39649555/46959635-8a1ee400-d0ad-11e8-8852-478d4780fa60.png)
+![fredlogo-bl-300sqpx](https://user-images.githubusercontent.com/39649555/57606829-c995ac00-757a-11e9-8cd6-40d40da13160.png)
 
 FRED The ALTCoin for Alternative Energy.
 
