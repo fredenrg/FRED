@@ -1,5 +1,6 @@
 ![fredlogo-bl-300sqpx](https://user-images.githubusercontent.com/39649555/57606829-c995ac00-757a-11e9-8cd6-40d40da13160.png)
 
+NOTE: This repository will no longer be updated as we have moved to a Stellar based token which is faster, cheaper and greener (No POW)
 FRED The ALTCoin for Alternative Energy.
 
 Over the next few decades the worlds energy demands are expected to grow by 30%, this will have a huge impact on the environment and consumer affordability as demand grows.
