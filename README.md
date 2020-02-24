@@ -2,6 +2,7 @@
 
 NOTE: This repository will no longer be updated as we have moved to a Stellar based token which is faster, cheaper and greener (No POW)
 FRED The ALTCoin for Alternative Energy.
+Find out more at https://fredenergy.org and https://token-sale.fredenergy.org
 
 Over the next few decades the worlds energy demands are expected to grow by 30%, this will have a huge impact on the environment and consumer affordability as demand grows.
 
